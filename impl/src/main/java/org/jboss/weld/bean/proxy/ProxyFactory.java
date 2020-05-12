@@ -232,7 +232,7 @@ public class ProxyFactory<T> implements PrivilegedAction<T> {
             if (superInterface == null) {
                 throw new IllegalArgumentException("Proxied bean type cannot be java.lang.Object without an interface");
             } else {
-                if (superInterface.getPackage() == null || proxiedBeanType.getPackage().getName().isEmpty()) {
+                if (superInterface.getPackage() == null || superInterface.getPackage().getName().isEmpty()) {
                     proxyPackage = DEFAULT_PROXY_PACKAGE;
                 } else {
                     proxyPackage = superInterface.getPackage().getName();
